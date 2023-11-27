@@ -6,13 +6,13 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:28:22 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/24 11:36:05 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:21:47 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-void	ft_putchr(char c)
+static void	ft_putchr(char c)
 {
 	write(1, &c, 1);
 }
@@ -48,4 +48,3 @@ int	main(void)
 	ft_putnbr(num);
 	return (0);
 }*/
-

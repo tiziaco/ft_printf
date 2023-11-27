@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libprintf.h                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 11:31:56 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/27 18:39:08 by tiacovel         ###   ########.fr       */
+/*   Created: 2023/11/27 17:28:05 by tiacovel          #+#    #+#             */
+/*   Updated: 2023/11/27 18:49:52 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#include "libprintf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdint.h>
+void	ft_putptr(void *ptr)
+{
+	uintptr_t address;
 
-void	ft_putchr(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-void	ft_putexa_up(unsigned int nb);
-void	ft_putexa_low(unsigned int nb);
+	ft_putstr("0x");
+	address = (uintptr_t)ptr;
+	ft_putexa_low(address);
+}
 
-#endif
+/* #include <stdio.h>
+int main() {
+	int value = 200;
+	void *ptr = &value;
+
+	//printVoidPointer(ptr);
+	printf("%p\n", ptr);
+	ft_putptr(ptr);
+	//printf("\n%x", -1);
+
+	return 0;
+} */

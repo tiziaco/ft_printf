@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libprintf.h                                        :+:      :+:    :+:   */
+/*   ft_putexa_up.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 11:31:56 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/27 18:39:08 by tiacovel         ###   ########.fr       */
+/*   Created: 2023/08/30 15:28:22 by tiacovel          #+#    #+#             */
+/*   Updated: 2023/11/27 18:39:47 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#include "libprintf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdint.h>
+void	ft_putexa_up(unsigned int nb)
+{
+	char	hex_digit;
+	int		remainder;
 
-void	ft_putchr(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-void	ft_putexa_up(unsigned int nb);
-void	ft_putexa_low(unsigned int nb);
+	if (nb == 0)
+		return ;
+	ft_putexa_up(nb / 16);
+	remainder = nb % 16;
+	if (remainder < 10)
+		hex_digit = '0' + remainder;
+	else
+		hex_digit = 'A' + remainder - 10;
+	write(1, &hex_digit, 1);
+}
 
-#endif
+/* #include <stdio.h>
+int	main(void)
+{
+	unsigned int	num;
+
+	num = 4224;
+	ft_putexa_up(num);
+	return (0);
+} */

@@ -6,13 +6,13 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 11:09:18 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/24 11:38:12 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:38:48 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 
-static void	ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	int	i;
 
