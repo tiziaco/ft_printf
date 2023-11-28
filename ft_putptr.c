@@ -6,19 +6,20 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 17:28:05 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/27 18:49:52 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:20:36 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "libftprintf.h"
 
-void	ft_putptr(void *ptr)
+int	ft_putptr(void *ptr)
 {
-	uintptr_t address;
+	uintptr_t	address;
 
 	ft_putstr("0x");
 	address = (uintptr_t)ptr;
 	ft_putexa_low(address);
+	return (1);
 }
 
 /* #include <stdio.h>

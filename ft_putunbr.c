@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libprintf.h                                        :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 11:31:56 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/27 18:39:08 by tiacovel         ###   ########.fr       */
+/*   Created: 2023/08/30 15:28:22 by tiacovel          #+#    #+#             */
+/*   Updated: 2023/11/28 16:00:39 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#include "libftprintf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-# include <stdint.h>
+int	ft_putunbr(unsigned int nb)
+{
+	int	count;
 
-void	ft_putchr(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-void	ft_putexa_up(unsigned int nb);
-void	ft_putexa_low(unsigned int nb);
+	count = 0;
+	if (nb > 9)
+	{
+		count += ft_putnbr(nb / 10);
+		count += ft_putnbr(nb % 10);
+	}
+	else
+		count += ft_putchr(nb + 48);
+	return (count);
+}
 
-#endif
+/* #include <stdio.h>
+int	main(void)
+{
+	int	num;
+	int len;
+
+	num = 42;
+	len = ft_putnbr(num);
+	printf("\nNum len: %d", len);
+	return (0);
+} */

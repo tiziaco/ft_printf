@@ -6,13 +6,13 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 11:09:18 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/27 17:38:48 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:00:34 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "libftprintf.h"
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int	i;
 
@@ -22,6 +22,7 @@ void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
+	return (i);
 }
 /*
 int	main(void)

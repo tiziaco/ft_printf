@@ -6,19 +6,17 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:28:22 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/27 15:21:47 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:20:06 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "libftprintf.h"
 
-static void	ft_putchr(char c)
+int	ft_putnbr(int nb)
 {
-	write(1, &c, 1);
-}
+	int	count;
 
-void	ft_putnbr(int nb)
-{
+	count = 0;
 	if (nb == -2147483648)
 	{
 		write(1, "-", 1);
@@ -36,7 +34,8 @@ void	ft_putnbr(int nb)
 		ft_putnbr(nb % 10);
 	}
 	else
-		ft_putchr(nb + 48);
+		count += ft_putchr(nb + 48);
+	return (count);
 }
 
 /*#include <stdio.h>
