@@ -6,35 +6,53 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:28:22 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/28 16:44:43 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:53:25 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putunbr(unsigned int nb)
+static int	count_digits(unsigned int n)
 {
-	int	count;
+	int	digits;
 
-	count = 0;
+	digits = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		digits += 1;
+		n /= 10;
+	}
+	return (digits);
+}
+
+void	prt_putunbr(unsigned int nb)
+{
 	if (nb > 9)
 	{
-		count += ft_putnbr(nb / 10);
-		count += ft_putnbr(nb % 10);
+		prt_putunbr(nb / 10);
+		prt_putunbr(nb % 10);
 	}
 	else
-		count += ft_putchr(nb + 48);
-	return (count);
+		ft_putchr(nb + 48);
+}
+
+int	ft_putunbr(unsigned int nb)
+{
+	prt_putunbr(nb);
+	return (count_digits(nb));
 }
 
 /* #include <stdio.h>
 int	main(void)
 {
-	int	num;
+	unsigned int	num;
 	int len;
 
 	num = 42;
-	len = ft_putnbr(num);
+	len = ft_putunbr(-1);
+	printf("\nSTD res: %u", -1);
 	printf("\nNum len: %d", len);
 	return (0);
 } */

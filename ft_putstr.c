@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 11:09:18 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/28 17:06:39 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:48:39 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_putstr(char *str)
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
-		i += 6;
+		return (6);
 	}
 	while (str[i] != '\0')
 	{
