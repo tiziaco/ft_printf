@@ -1,2 +1,4 @@
 ./libft/*
 *.out
+*.a
+*.vscode
