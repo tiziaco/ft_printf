@@ -6,11 +6,11 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:21:23 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/28 16:20:24 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:44:16 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putchr(char c)
 {

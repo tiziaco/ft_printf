@@ -6,14 +6,13 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:19:22 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/28 16:19:51 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:22:26 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include <stdio.h>
+#include "ft_printf.h"
 
-void	print_case(char c, va_list args, int *count)
+static void	print_case(char c, va_list args, int *count)
 {
 	if (c == 'c')
 		count += ft_putchr(va_arg(args, int));
@@ -60,15 +59,17 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-/* int main(void)
+int main(void)
 {
 	int len;
 	int value = 200;
 	void *ptr = &value;
 
-	len = ft_printf("Test character: %c\n", 'T');
+	len = ft_printf("%c", '1');
+	ft_printf("\nChar printed: %d\n\n", len);
+	/* len = ft_printf("Test string: %s\n","yeee");
 	ft_printf("Char printed: %d\n\n", len);
-	len = ft_printf("Test string: %s\n","yeee");
+	len = ft_printf("Test pointer: %p\n", ptr);
 	ft_printf("Char printed: %d\n\n", len);
 	len = ft_printf("Test integer: %i\n",21);
 	ft_printf("Char printed: %d\n\n", len);
@@ -81,7 +82,7 @@ int	ft_printf(const char *str, ...)
 	len = ft_printf("Test hexa up: %X\n",4242);
 	ft_printf("Char printed: %d\n\n", len);
 	len = ft_printf("Test pct: %%\n");
-	ft_printf("Char printed: %d\n\n", len);
+	ft_printf("Char printed: %d\n\n", len); */
 
 	return (0);
-} */
+}
