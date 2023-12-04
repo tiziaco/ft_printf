@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:31:56 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/28 16:48:25 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/12/04 15:47:17 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int	ft_putstr(char *str);
 int	ft_putnbr(int nb);
 int	ft_putunbr(unsigned int nb);
 int	ft_putptr(void *ptr);
-int	ft_putexa_up(unsigned int nb);
-int	ft_putexa_low(unsigned int nb);
+int	ft_putexa_nb(unsigned int nb, const char format);
 int	ft_printf(const char *str, ...);
 
 #endif
