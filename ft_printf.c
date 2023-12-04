@@ -6,7 +6,7 @@
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:19:22 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/11/28 17:51:05 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:50:23 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int	print_case(char c, va_list args)
 	else if (c == 'u')
 		return (ft_putunbr(va_arg(args, unsigned int)));
 	else if (c == 'x')
-		return (ft_putexa_low(va_arg(args, unsigned int)));
+		return (ft_putexa_nb(va_arg(args, unsigned int), 'x'));
 	else if (c == 'X')
-		return (ft_putexa_low(va_arg(args, unsigned int)));
+		return (ft_putexa_nb(va_arg(args, unsigned int), 'X'));
 	else if (c == '%')
 		return (ft_putchr('%'));
 	return (0);
@@ -57,9 +57,12 @@ int	ft_printf(const char *str, ...)
 	return (count);
 }
 
-/* int main(void)
+/* #include <stdio.h>
+#include <limits.h>
+int main(void)
 {
-	int len;2.KOn", ptr);
+	int len, len2;
+
 	ft_printf("Char printed: %d\n\n", len);
 	len = ft_printf("Test integer: %i\n",21);
 	ft_printf("Char printed: %d\n\n", len);
@@ -67,12 +70,37 @@ int	ft_printf(const char *str, ...)
 	ft_printf("Char printed: %d\n\n", len);
 	len = ft_printf("Test un int: %u\n",4242);
 	ft_printf("Char printed: %d\n\n", len);
-	len = ft_printf("Test hexa low: %x\n",4242);
+	len = ft_printf("Test hexa low: %x\n", 0);
 	ft_printf("Char printed: %d\n\n", len);
 	len = ft_printf("Test hexa up: %X\n",4242);
 	ft_printf("Char printed: %d\n\n", len);
 	len = ft_printf("Test pct: %%\n");
 	ft_printf("Char printed: %d\n\n", len);
 
+	// Test STD printf
+	printf("STD function:\n");
+	len = printf(" %lx\n", LONG_MIN);
+	printf("%d\n", len);
+
+	printf("42 function:\n");
+	len2 = ft_printf(" %x\n", LONG_MIN);
+	printf("%d\n", len2);
+	return (0);
+} */
+
+/* #include <stdio.h>
+#include <limits.h>
+int main(void)
+{
+	int len, len2;
+
+	// Test STD printf
+	printf("STD function:\n");
+	len = printf(" %x\n", 0);
+	printf("%d\n", len);
+
+	printf("42 function:\n");
+	len2 = ft_printf(" %x\n", 0);
+	printf("%d\n", len2);
 	return (0);
 } */

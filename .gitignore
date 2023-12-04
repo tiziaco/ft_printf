@@ -1,4 +1,5 @@
 ./libft/*
+/OLD
 *.out
 *.a
 *.vscode
