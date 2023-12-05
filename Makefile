@@ -6,11 +6,11 @@
 #    By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/20 18:33:34 by tiacovel          #+#    #+#              #
-#    Updated: 2023/12/04 15:50:43 by tiacovel         ###   ########.fr        #
+#    Updated: 2023/12/05 11:15:35 by tiacovel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= ft_putchr.c ft_putstr.c ft_putnbr.c ft_putunbr.c ft_putptr.c ft_putexa_nb.c ft_printf.c
+SRCS			= ft_putchr.c ft_putstr.c ft_putnbr.c ft_putunbr.c ft_putptr.c ft_puthexa.c ft_printf.c
 
 OBJS			= $(SRCS:.c=.o)
 
