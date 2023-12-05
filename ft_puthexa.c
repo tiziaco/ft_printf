@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putexa_nb.c                                     :+:      :+:    :+:   */
+/*   ft_puthexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiacovel <tiacovel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:28:22 by tiacovel          #+#    #+#             */
-/*   Updated: 2023/12/04 18:49:51 by tiacovel         ###   ########.fr       */
+/*   Updated: 2023/12/05 11:12:08 by tiacovel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ static int	count_digits(unsigned int nb)
 	return (digits);
 }
 
-static void	prt_putexa(unsigned int nb, const char format)
+static void	prt_hexa(unsigned int nb, const char format)
 {
 	if (nb >= 16)
 	{
-		prt_putexa(nb / 16, format);
-		prt_putexa(nb % 16, format);
+		prt_hexa(nb / 16, format);
+		prt_hexa(nb % 16, format);
 	}
 	else
 	{
@@ -52,11 +52,11 @@ static void	prt_putexa(unsigned int nb, const char format)
 	}
 }
 
-int	ft_putexa_nb(unsigned int nb, const char format)
+int	ft_puthexa(unsigned int nb, const char format)
 {
 	if (nb == 0)
 		return (write(1, "0", 1));
-	prt_putexa(nb, format);
+	prt_hexa(nb, format);
 	return (count_digits(nb));
 }
 
